@@ -24,7 +24,7 @@ Flatline them? Will do.
 
 Author: DataFrogman
 ```
-[infection](https://www.dropbox.com/s/funifq0hh0y956q/infection?dl=0)
+[infection](https://www.dropbox.com/s/funifq0hh0y956q/infection?dl=1)
 
 By `cat`ing `infection` with see a sequences of nucleotides. They are separated from one another by a single space.
 
