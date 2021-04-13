@@ -46,28 +46,31 @@ proc parseQuaternary(s: string): int =
     n &= q.ord.toBin(2)
   result = parseBinInt(n)
 
-let dna = newFileStream("infection")
+block disinfect:
+  let
+    infection = newFileStream("infection")
+    antidote = newFileStream("antidote", fmWrite)
 
-var
-  curr: string
-  res: seq[int]
+  defer:
+    close(infection)
+    close(antidote)
 
-while not dna.atEnd:
-  let c = dna.readChar
-  if c == ' ':
-    res.add parseQuaternary(curr)
-    curr = ""
-  else:
-    curr.add c
+  var
+    curr: string
+    res: seq[int]
 
-let
-  antidote = open("antidote", fmWrite)
-  bytes = res.mapIt(it.char)
+  while not infection.atEnd:
+    let c = infection.readChar
+    if c == ' ':
+      res.add parseQuaternary(curr)
+      curr = ""
+    else:
+      curr.add c
 
-for b in bytes:
-  antidote.write b
+  let bytes = res.mapIt(it.char)
 
-close(antidote)
+  for b in bytes:
+    antidote.write b
 ```
 
 ```sh
