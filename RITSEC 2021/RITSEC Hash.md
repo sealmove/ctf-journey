@@ -28,7 +28,7 @@ import strformat, strutils, sequtils
 
 const
   seed = "RITSEC".mapIt(it.byte)
-  target = @[0x43'u8, 0x58, 0x18, 0x05, 0x59, 0x06]
+  target = "435818055906".parseHexStr.mapIt(it.byte)
   wordlist = "rockyou.txt"
 
 proc H(h: seq[byte], x, r: byte): seq[byte] =

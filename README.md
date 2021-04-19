@@ -1,5 +1,5 @@
-# ctf-journey
-Collection of personal CTF coding experiences
+# CTF Journey
+This repo is my personal CTF journal.
 
 - RITSEC 2021
   - [Misc/Answers](<RITSEC 2021/Answers.md>)
